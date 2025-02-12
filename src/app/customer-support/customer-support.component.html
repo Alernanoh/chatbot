@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="card">
+                <h4 class="card-header center text-primary">Ahora estás chateando con Mr.Roboto.</h4>
+                <div class="card-body">
+                    <h6 class="card-title text-success center">Ahora estás chateando con Mr.Roboto.</h6>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="frame-box">
+                                <div *ngFor="let item of chatConversation">
+                                    <p class="card-text padding" [ngClass]="item.cssClass">
+                                        {{item.person}} :  {{getText(item.response)}}
+                                    </p>
+                                </div>
+                                <div><img src="../../assets/ZNeT.gif" *ngIf="showSpinner" width="50px" height="50px"></div>
+                            </div>
+                            <br>
+                            <!-- Input para subir archivos -->
+                            <div class="file-upload-section">
+                                <label class="btn btn-secondary">
+                                    Subir Archivo
+                                    <input type="file" id="fileInput" (change)="onFileSelected($event)" style="display: none;" />
+                                </label>
+                                <label class="btn btn-secondary">
+                                    Subir Audio
+                                    <input type="file" accept="audio/*" id="audioInput" (change)="onAudioSelected($event)" style="display: none;" />
+                                </label>
+                            </div>
+                            <br>
+                            <textarea rows="3" cols="15" class="form-control" [(ngModel)]="promptText" placeholder="Pregunta por lo que estas buscando."></textarea>
+                            <br>
+                            <button class="btn btn-primary push-right" (click)="checkResponse()">Enviar</button>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
