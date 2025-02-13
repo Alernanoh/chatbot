@@ -1,26 +1,109 @@
+/* Botón de envío alineado a la derecha */
 .push-right {
-    margin-left: 90%;
+    margin-left: auto;
+    display: block;
 }
 
+/* Estilo para los mensajes del usuario */
 .person {
     font-style: italic;
-    font-weight: bold;
-    color: purple;
+    font-weight: 500;
+    color: #6c5ce7; /* Morado suave */
+    background-color: #f3e9ff; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ancho máximo del mensaje */
+    align-self: flex-end; /* Alineación a la derecha */
 }
 
-.bot {    
-    font-weight: bold; 
-    color: darkgreen;
+/* Estilo para los mensajes del bot */
+.bot {
+    font-weight: 500;
+    color: #2ecc71; /* Verde lima */
+    background-color: #e8fff4; /* Fondo claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 80%; /* Ancho máximo del mensaje */
+    align-self: flex-start; /* Alineación a la izquierda */
 }
 
-.frame-box{
-    border: dotted 2px orange; padding: 20px;
+/* Contenedor principal del chat */
+.frame-box {
+    border: 2px solid #ff9f43; /* Borde sólido naranja */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px;
     min-height: 400px;
     max-height: 400px;
-    overflow-y: scroll
+    overflow-y: auto; /* Scroll vertical */
+    background-color: #f9f9f9; /* Fondo claro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    display: flex;
+    flex-direction: column;
 }
 
-
-.padding{
+/* Espaciado general */
+.padding {
     padding: 5px;
+}
+
+/* Botones de subida de archivos */
+.file-upload-section {
+    display: flex;
+    gap: 10px; /* Espacio entre los botones */
+    margin-bottom: 10px;
+}
+
+.file-upload-section .btn {
+    background-color: #3498db; /* Azul claro */
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.file-upload-section .btn:hover {
+    background-color: #2980b9; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Área de texto para escribir mensajes */
+textarea.form-control {
+    resize: none; /* Deshabilitar el cambio de tamaño */
+    border: 2px solid #ccc; /* Borde más visible */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    font-size: 16px; /* Tamaño de fuente más grande */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra interna */
+}
+
+/* Botón de enviar */
+button.btn-primary {
+    background-color: #e74c3c; /* Rojo brillante */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Animaciones para el spinner */
+img[src$="ZNeT.gif"] {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

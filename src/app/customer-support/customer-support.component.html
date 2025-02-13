@@ -30,8 +30,14 @@
                                 </label>
                             </div>
                             <br>
-                            <textarea rows="3" cols="15" class="form-control" [(ngModel)]="promptText" placeholder="Pregunta por lo que estas buscando."></textarea>
+                            <!-- Textarea con evento keydown.enter -->
+                            <textarea rows="3" cols="15" class="form-control"
+                                      [(ngModel)]="promptText"
+                                      placeholder="Pregunta por lo que estas buscando."
+                                      (keydown.enter)="handleEnterKey($any($event))">
+                            </textarea>
                             <br>
+                            <!-- Botón de enviar (opcional) -->
                             <button class="btn btn-primary push-right" (click)="checkResponse()">Enviar</button>
                         </div>
                         <div class="col-md-2">
